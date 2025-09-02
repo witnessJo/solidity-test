@@ -14,3 +14,4 @@ docs/
 .env
 
 .projectile-cache.eld
+.dir-locals.el
