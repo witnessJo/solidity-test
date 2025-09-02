@@ -10,9 +10,9 @@ contract DeployScript is Script {
         
         vm.startBroadcast(deployerPrivateKey);
         
-        MyToken token = new MyToken(
-            "MyToken",
-            "MTK",
+        WITJ token = new WITJ(
+            "WITJ-ERC20",
+            "WITJ",
             1000000, // 1M tokens
             deployer
         );

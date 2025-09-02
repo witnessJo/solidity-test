@@ -12,6 +12,8 @@ docs/
 
 # Dotenv file
 .env
+.env.test
+.env.main
 
 .projectile-cache.eld
 .dir-locals.el
