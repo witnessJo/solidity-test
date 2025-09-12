@@ -2,10 +2,8 @@
 cache/
 out/
 
-# Ignores development broadcast logs
-!/broadcast
-/broadcast/*/31337/
-/broadcast/**/dry-run/
+# Ignore broadcast
+/broadcast
 
 # Docs
 docs/
@@ -15,5 +13,8 @@ docs/
 .env.test
 .env.main
 
+# For emacs
 .projectile-cache.eld
 .dir-locals.el
+
+
