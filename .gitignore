@@ -2,6 +2,9 @@
 cache/
 out/
 
+# Ignore wallet files
+wallet-*.txt
+
 # Ignore broadcast
 /broadcast
 
