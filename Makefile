@@ -23,7 +23,7 @@ call-balance:
 
 call-send:
 	@echo "Calling send function..."
-	cast send $(CONTRACT_ADDRESS) --rpc-url $(RPC_URL) --value 1ether --private-key $(PRIVATE_KEY) $(CONTRACT_ADDRESS)
+	cast send $(CONTRACT_ADDRESS) --rpc-url $(RPC_URL) --value 0.0000001ether --private-key $(PRIVATE_KEY) $(CONTRACT_ADDRESS)jj
 
 call-transfer:
 	@echo "Calling transfer function..."
@@ -31,7 +31,7 @@ call-transfer:
 
 call-transferFrom:
 	@echo "Calling transferFrom function..."
-	cast send $(CONTRACT_ADDRESS) "transferFrom(address,address,uint256)" $(SENDER_ADDRESS) $(RECIPIENT_ADDRESS) 1ether --rpc-url $(RPC_URL) --private-key $(PRIVATE_KEY)
+	cast send $(CONTRACT_ADDRESS) "transferFrom(address,address,uint256)" $(SENDER_ADDRESS) $(RECIPIENT_ADDRESS) 0.0000001ether --rpc-url $(RPC_URL) --private-key $(PRIVATE_KEY)
 
 call-mint:
 	@echo "Calling mint function..."
