@@ -66,3 +66,7 @@ send-eth-to-second:
 transfer-from-second:
 	@echo "RECIPIENT transferring tokens from SECOND to THIRD..."
 	cast send $(CONTRACT_ADDRESS) "transferFrom(address,address,uint256)" $(SECOND_ADDRESS) $(THIRD_ADDRESS) 1000000000000000000 --rpc-url $(RPC_URL) --private-key $(PRIVATE_KEY)
+
+test: build
+	@echo "Running tests..."
+	forge test -v

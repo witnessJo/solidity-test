@@ -1,7 +1,7 @@
 pragma solidity ^0.8.20;
 
 import "forge-std/Script.sol";
-import "../src/MyToken.sol";
+import "../src/WIJToken.sol";
 
 contract DeployScript is Script {
     function run() external {
