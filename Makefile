@@ -69,4 +69,4 @@ transfer-from-second:
 
 test: build
 	@echo "Running tests..."
-	forge test -v
+	forge test -vv
