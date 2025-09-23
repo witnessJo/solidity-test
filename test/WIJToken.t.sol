@@ -27,11 +27,13 @@ contract WIJTokenTest is Test {
         vm.prank(owner);
         token = new WITJ("WITJ-ERC20", "WITJ", 1000000, owner); // 1M tokens
     }
+
     function test_InitialSupply() public {
         console.log("Expected Supply:", expectedInitialSupply);
         assertEq(token.totalSupply(), expectedInitialSupply);
         assertEq(token.balanceOf(owner), expectedInitialSupply);
     }
+
     function test_MintByOwner() public {
         uint256 mintAmount = 5000 * 10 ** token.decimals();
         vm.prank(owner);
@@ -39,12 +41,14 @@ contract WIJTokenTest is Test {
         assertEq(token.balanceOf(user1), mintAmount);
         assertEq(token.totalSupply(), (expectedInitialSupply + mintAmount));
     }
+
     function test_MintByNonOwner() public {
         uint256 mintAmount = 5000 * 10 ** token.decimals();
         vm.prank(user1);
         vm.expectRevert();
         token.mint(user1, mintAmount);
     }
+
     function test_Transfer() public {
         uint256 transferAmount = 3000 * 10 ** token.decimals();
         vm.prank(owner);
@@ -52,6 +56,7 @@ contract WIJTokenTest is Test {
         assertEq(token.balanceOf(user1), transferAmount);
         assertEq(token.balanceOf(owner), (expectedInitialSupply - transferAmount));
     }
+
     function test_Allowance() public {
         uint256 approveAmount = 2000 * 10 ** token.decimals();
         vm.prank(owner);
@@ -59,6 +64,7 @@ contract WIJTokenTest is Test {
         console.log("Allowance of user1 by owner:", token.allowance(owner, user1));
         assertEq(token.allowance(owner, user1), approveAmount);
     }
+
     function test_TranferFrom() public {
         uint256 transferAmount = 4000 * 10 ** token.decimals();
         vm.prank(owner);
